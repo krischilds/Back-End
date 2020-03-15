@@ -4,15 +4,15 @@ var fdb = require("./fruitDatabase")
 var cors = require('cors')
 var bodyParser = require("body-parser");
 
-var HTTP_PORT = 8000
+const port = process.env.PORT || 8000
 
 // configure post
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Start server
-app.listen(HTTP_PORT, () => {
-    console.log("Running Fruit API on port %PORT%".replace("%PORT%", HTTP_PORT))
+app.listen(port, () => {
+    console.log("Running Fruit API on port %PORT%".replace("%PORT%", port))
 });
 
 app.use(cors());
