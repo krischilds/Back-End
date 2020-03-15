@@ -17,6 +17,12 @@ app.listen(port, () => {
 
 app.use(cors());
 
+app.get("/", (req, res, next) => {
+    res.json({
+        "message": "Back-End API Service"
+    })
+});
+
 // Return all fruit
 app.get("/api/fruit", (req, res, next) => {
     var sql = "select * from fruit_prices"
