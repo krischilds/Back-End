@@ -23,7 +23,7 @@ let fruitDb = new sqlite3.Database(DBSOURCE, (err) => {
                 console.log(err);
             } else {
                 console.log("RUN DELETE fruit_prices");
-                // NOTE: Delete records to start over when we rerun the server
+                // NOTE: Delete records to start over when we rerun the server.  Remove to persist data.
                 fruitDb.run('DELETE FROM fruit_prices WHERE id>0', (err) => {
                     if (err) {
                         // Table already created
@@ -40,10 +40,10 @@ let fruitDb = new sqlite3.Database(DBSOURCE, (err) => {
                 fruitDb.run(insert, ["2019-02-07", 354, 98, 132, 123]);
                 fruitDb.run(insert, ["2019-03-07", 512, 120, 321, 159]);
                 fruitDb.run(insert, ["2019-04-07", 287, 75, 214, 187]);
-                fruitDb.run(insert, ["2020-01-07", 321, 19, 160, 131]);
-                fruitDb.run(insert, ["2020-02-07", 344, 58, 132, 231]);
-                fruitDb.run(insert, ["2020-03-07", 122, 20, 210, 129]);
-                fruitDb.run(insert, ["2020-04-07", 667, 175, 214, 147]);
+                fruitDb.run(insert, ["2020-01-01", 321, 19, 160, 131]);
+                fruitDb.run(insert, ["2020-02-01", 344, 58, 132, 231]);
+                fruitDb.run(insert, ["2020-03-01", 122, 20, 210, 129]);
+                fruitDb.run(insert, ["2020-04-01", 667, 175, 214, 147]);
 
             }
         });

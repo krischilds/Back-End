@@ -25,7 +25,7 @@ app.get("/", (req, res, next) => {
 
 // Return all fruit
 app.get("/api/fruit", (req, res, next) => {
-    var sql = "select * from fruit_prices"
+    var sql = "select * from fruit_prices order by date"
     var params = []
     fdb.all(sql, params, (err, rows) => {
         if (err) {
