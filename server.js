@@ -23,6 +23,10 @@ app.get("/", (req, res, next) => {
     res.json({ "message": "Ok" })
 });
 
+// API version
+app.get("/api/version", (req, res, next) => {
+    res.json({ "version": "1.0" })
+});
 
 // Return all fruit
 app.get("/api/fruit", (req, res, next) => {
